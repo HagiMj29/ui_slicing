@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ui_slicing/page/home_page.dart';
+import 'package:ui_slicing/page/onboarding_screen.dart';
 
 import '../widgets/theme.dart';
 
@@ -50,7 +52,7 @@ class ThirdOnBoardingPage extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15))),
                     onPressed: () {
-                      // Navigator.push(context, MaterialPageRoute(builder: (context)=>SecondOnBoardingPage()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>OnboardingScreen()));
                     },
                     child: Text(
                       'Get Started',
