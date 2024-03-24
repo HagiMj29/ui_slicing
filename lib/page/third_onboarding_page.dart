@@ -52,7 +52,7 @@ class ThirdOnBoardingPage extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15))),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>OnboardingScreen()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
                     },
                     child: Text(
                       'Get Started',

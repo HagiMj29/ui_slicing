@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ui_slicing/page/home_image_card.dart';
+import 'package:ui_slicing/widgets/home_button_category_card.dart';
+import 'package:ui_slicing/widgets/home_doctor_feature.dart';
+import 'package:ui_slicing/widgets/home_image_card.dart';
+import 'package:ui_slicing/widgets/popular_home_doctor.dart';
 import 'package:ui_slicing/widgets/theme.dart';
 
 class HomePage extends StatelessWidget {
@@ -96,32 +99,68 @@ class HomePage extends StatelessWidget {
                   height: 200,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 30),
+                  padding: const EdgeInsets.only(left: 5),
                   child: Text("Live Doctor!"),
                 ),
                 SizedBox(
                   height: 5,
                 ),
-                ImageCard(),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5),
+                  child: ImageCard(),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5),
+                  child: CategoryCards(),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5),
+                  child: Text("Popular Doctor"),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5),
+                  child: PopularDoctor(),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5, right: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Feature Doctor"),
+                      Text("See all>")
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 5),
+                  child: FeatureDoctor(),
+                ),
               ],
             ),
           ],
         ),
       ),
       bottomNavigationBar: Container(
-        height: 55,
+        height: 60,
         decoration: BoxDecoration(
-            // boxShadow: [
-            //   BoxShadow(
-            //     color: Colors.grey.withOpacity(0.2),
-            //     blurRadius: 5,
-            //     spreadRadius: 2,
-            //     offset: Offset(0, 3), // Changes the position of the shadow
-            //   ),
-            // ],
-            color: Colors.white24,
+            color: Colors.transparent,
             borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(15), topRight:  Radius.circular(15))),
+                topLeft: Radius.circular(30), topRight:  Radius.circular(30))),
         child: Row(
           children: <Widget>[
             Expanded(
