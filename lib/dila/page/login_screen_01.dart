@@ -1,18 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ui_slicing/dila/page/sign_up_screen.dart';
 
-import 'login_screen_01.dart';
+import 'login_screen_02.dart';
 
-class SignUpScreen extends StatefulWidget {
-  const SignUpScreen({Key? key}) : super(key: key);
+class LoginScreen01 extends StatefulWidget {
+  const LoginScreen01({Key? key}) : super(key: key);
 
   @override
-  State<SignUpScreen> createState() => _SignUpScreenState();
+  State<LoginScreen01> createState() => _LoginScreen01State();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _LoginScreen01State extends State<LoginScreen01> {
   bool _obscurePassword = true;
-  bool _isChecked = false;
+  String? _name;
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +29,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SizedBox(height: 80),
+                SizedBox(height: 70),
                 Center(
                   child: Text(
-                    'Join us to start searching',
+                    'Welcome Back',
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
@@ -107,7 +108,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 12,
+                  height: 20,
                 ),
                 Center(
                   child: Column(
@@ -127,26 +128,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               borderSide: BorderSide.none,
                               borderRadius: BorderRadius.circular(12),
                             ),
-                            hintText: 'Name',
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Container(
-                        width: 450,
-                        padding: EdgeInsets.symmetric(horizontal: 20),
-                        child: TextFormField(
-                          decoration: InputDecoration(
-                            fillColor: Colors.grey.withOpacity(0.2),
-                            filled: true,
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.circular(12),
-                            ),
                             hintText: 'Email',
+                            suffixIcon: _name != null && _name!.isNotEmpty
+                                ? Icon(Icons.check, color: Colors.green)
+                                : null,
                           ),
+                          onChanged: (value) {
+                            setState(() {
+                              _name = value.trim();
+                            });
+                          },
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Email tidak boleh kosong';
+                            }
+                            return null;
+                          },
                         ),
                       ),
                       SizedBox(
@@ -179,27 +176,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 5,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Checkbox(
-                            value: _isChecked,
-                            onChanged: (bool? value) {
-                              setState(() {
-                                _isChecked = value!;
-                              });
-                            },
-                          ),
-                          Text(
-                            'I agree with the Terms of Service & Privacy Policy',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 15,
+                        height: 20,
                       ),
                       MaterialButton(
                         onPressed: () {},
@@ -212,7 +189,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           borderRadius: BorderRadius.circular(12),
                         ),
                         child: Text(
-                          'Signup',
+                          'Login',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w200,
@@ -223,26 +200,42 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         height: 10,
                       ),
                       Center(
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen01()));
-                          },
-                          child: Text(
-                            'Have an account? Log in',
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.green,
+                        child: Column(
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                showModalBottomSheet(
+                                    backgroundColor: Colors.transparent,
+                                    context: context,
+                                    builder: (context) {
+                                      return LoginScreen02();
+                                    });
+                              },
+                              child: Text(
+                                'Forgot Password',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.green,
+                                ),
+                              ),
                             ),
-                          ),
+                            SizedBox(height: 50),
+                            // Menambahkan jarak vertikal di antara dua link
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpScreen()));
+                              },
+                              child: Text(
+                                'Dont have an account? Join us',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: Colors.green,
+                                ),
+                              ),
+                            )
+                          ],
                         ),
                       ),
-                      // TextButton(
-                      //   onPressed: () {},
-                      //   child: Text(
-                      //     'Have an account? Log in',
-                      //     style: TextStyle(color: Colors.green),
-                      //   ),
-                      // ),
                     ],
                   ),
                 ),
