@@ -56,10 +56,20 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
+  fonts:
+    - family: Rubik
+      fonts:
+        - asset: fonts/Rubik-Regular.ttf
+        - asset: fonts/Rubik-Bold.ttf
+          weight: 700
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - images/fiza/bg.png
+    - images/fiza/back.png
+    - images/fiza/details.png
+    - images/fiza/diagonstic.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
