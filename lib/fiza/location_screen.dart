@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:ui_slicing/fiza/location_screen.dart';
+import 'package:ui_slicing/fiza/setting_screen.dart';
 
-class DiagonsticTestPage extends StatefulWidget {
-  const DiagonsticTestPage({Key? key}) : super(key: key);
+class LocationPage extends StatefulWidget {
+  const LocationPage({Key? key}) : super(key: key);
 
   @override
-  _DiagonsticTestPageState createState() => _DiagonsticTestPageState();
+  _LocationPageState createState() => _LocationPageState();
 }
 
-class _DiagonsticTestPageState extends State<DiagonsticTestPage> {
+class _LocationPageState extends State<LocationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +36,7 @@ class _DiagonsticTestPageState extends State<DiagonsticTestPage> {
                           ),
                           child: GestureDetector(
                             onTap: () {
-                              Navigator.pop(context, DiagonsticTestPage());
+                              Navigator.pop(context, LocationPage());
                             },
                             child: Image.asset(
                               'images/fiza/back.png',
@@ -47,7 +47,7 @@ class _DiagonsticTestPageState extends State<DiagonsticTestPage> {
                         ),
                         SizedBox(width: 10),
                         Text(
-                          'Diagnostic Tests',
+                          'Enable Location Services',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -56,15 +56,15 @@ class _DiagonsticTestPageState extends State<DiagonsticTestPage> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 100),
+                    SizedBox(height: 80),
                     Center(
                       child: Image.asset(
-                        'images/fiza/diagonstic.png',
+                        'images/fiza/location.png',
                       ),
                     ),
                     SizedBox(height: 20),
                     Text(
-                      'You haven’t booked any tests yet',
+                      'Location',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 16,
@@ -74,11 +74,22 @@ class _DiagonsticTestPageState extends State<DiagonsticTestPage> {
                     ),
                     SizedBox(height: 20),
                     Text(
-                      'Get started with your first health checkup',
+                      'Your location services are switched off. Please',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 14,
                         fontFamily: 'Rubik',
+                          color: Color.fromRGBO(103, 114, 148, 1),
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'enable location, to help us serve better.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontFamily: 'Rubik',
+                          color: Color.fromRGBO(103, 114, 148, 1),
                       ),
                     ),
                     SizedBox(height: 20),
@@ -86,7 +97,7 @@ class _DiagonsticTestPageState extends State<DiagonsticTestPage> {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => LocationPage()),
+                          MaterialPageRoute(builder: (context) => SettingsScreen()),
                         );
                       },
                       style: ElevatedButton.styleFrom(
@@ -100,7 +111,7 @@ class _DiagonsticTestPageState extends State<DiagonsticTestPage> {
                         ),
                       ),
                       child: Text(
-                        'Book Now',
+                        'Enable Location',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w200,
