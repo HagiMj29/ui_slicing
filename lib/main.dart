@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ui_slicing/page/find_doctor_page.dart';
 import 'package:ui_slicing/page/home_page.dart';
+import 'package:ui_slicing/page/live_page.dart';
 import 'package:ui_slicing/page/onboarding_screen.dart';
 import 'package:ui_slicing/page/splash_screen.dart';
 

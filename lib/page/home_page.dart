@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ui_slicing/page/find_doctor_page.dart';
+import 'package:ui_slicing/page/live_page.dart';
 import 'package:ui_slicing/widgets/home_button_category_card.dart';
 import 'package:ui_slicing/widgets/home_doctor_feature.dart';
 import 'package:ui_slicing/widgets/home_image_card.dart';
@@ -82,7 +84,11 @@ class HomePage extends StatelessWidget {
                 backgroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(12))),
-                leading: Icon(Icons.search),
+                leading: GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>FindDoctorPage()));
+                  },
+                    child: Icon(Icons.search)),
                 primary: false,
                 title: TextField(
                   decoration: InputDecoration(
@@ -100,7 +106,17 @@ class HomePage extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 5),
-                  child: Text("Live Doctor!"),
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>LivePage()));
+                    },
+                      child: Text("Live Doctor!", style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+
+                      ),
+                      )
+                  ),
                 ),
                 SizedBox(
                   height: 5,
@@ -121,7 +137,11 @@ class HomePage extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 5),
-                  child: Text("Popular Doctor"),
+                  child: Text("Popular Doctor", style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+
+                  ),),
                 ),
                 SizedBox(
                   height: 5,
@@ -138,7 +158,11 @@ class HomePage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Feature Doctor"),
+                      Text("Feature Doctor", style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+
+                      ),),
                       Text("See all>")
                     ],
                   ),
