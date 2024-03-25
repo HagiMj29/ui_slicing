@@ -120,13 +120,7 @@ class _LoginScreen04State extends State<LoginScreen04> {
                 ),
                 MaterialButton(
                   onPressed: () {
-                    showModalBottomSheet(
-                      backgroundColor: Colors.transparent,
-                      context: context,
-                      builder: (context) {
-                        return LoginScreen01();
-                      },
-                    );
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen01()));
                   },
                   padding: EdgeInsets.symmetric(
                     horizontal: 175,

@@ -65,6 +65,12 @@ flutter:
      - images/dila/background/ellipse_143.png
      - images/dila/icon/google.png
      - images/dila/icon/facebook.png
+     - images/dila/icon/illustration.png
+     - images/dila/icon/back.png
+     - images/dila/icon/camera.png
+     - images/dila/icon/files.png
+     - images/dila/icon/gallery.png
+     - images/dila/icon/medicine.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
