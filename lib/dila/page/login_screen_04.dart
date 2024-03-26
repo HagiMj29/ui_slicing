@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'all_record_screen.dart';
 import 'login_screen_01.dart';
 
 class LoginScreen04 extends StatefulWidget {
@@ -120,7 +121,7 @@ class _LoginScreen04State extends State<LoginScreen04> {
                 ),
                 MaterialButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen01()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>AllRecordScreen()));
                   },
                   padding: EdgeInsets.symmetric(
                     horizontal: 175,

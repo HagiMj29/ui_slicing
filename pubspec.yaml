@@ -71,6 +71,15 @@ flutter:
      - images/dila/icon/files.png
      - images/dila/icon/gallery.png
      - images/dila/icon/medicine.png
+     - images/dila/icon/titik_tiga.png
+     - images/dila/icon/record.png
+     - images/dila/icon/report.png
+     - images/dila/icon/prescription.png
+     - images/dila/icon/invoice.png
+     - images/dila/icon/doctor1.png
+     - images/dila/icon/titik_hijau.png
+     - images/dila/icon/doctor2.png
+     - images/dila/icon/doctor3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

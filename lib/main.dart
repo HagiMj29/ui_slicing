@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'dila/page/add_records_screen.dart';
 import 'dila/page/all_record_screen.dart';
+import 'dila/page/doctor_appointment_screen_02.dart';
 import 'dila/page/medical_record_screen_01.dart';
 import 'dila/page/medicine_order_screen.dart';
+import 'dila/page/my_doctors_screen.dart';
 import 'dila/page/sign_up_screen.dart';
 
 void main() {
@@ -36,7 +39,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: AllRecordScreen(),
+      home: MyDoctorScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

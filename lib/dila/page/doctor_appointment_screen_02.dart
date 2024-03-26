@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:ui_slicing/dila/page/all_record_screen.dart';
 
-import 'medical_record_screen_02.dart';
-
-class MedicalRecordScreen01 extends StatefulWidget {
-  const MedicalRecordScreen01({super.key});
+class DoctorAppointmentScreen02 extends StatefulWidget {
+  const DoctorAppointmentScreen02({super.key});
 
   @override
-  State<MedicalRecordScreen01> createState() => _MedicalRecordScreen01State();
+  State<DoctorAppointmentScreen02> createState() => _DoctorAppointmentScreen02State();
 }
 
-class _MedicalRecordScreen01State extends State<MedicalRecordScreen01> {
+class _DoctorAppointmentScreen02State extends State<DoctorAppointmentScreen02> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +35,7 @@ class _MedicalRecordScreen01State extends State<MedicalRecordScreen01> {
                           ),
                           child: GestureDetector(
                             onTap: () {
-                              Navigator.pop(context, AllRecordScreen());
+                              // Navigator.pop(context, DiagonsticTestPage());
                             },
                             child: Image.asset(
                               'images/dila/icon/back.png',
@@ -49,7 +46,7 @@ class _MedicalRecordScreen01State extends State<MedicalRecordScreen01> {
                         ),
                         SizedBox(width: 10),
                         Text(
-                          'Medical Records',
+                          'Appointment',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
@@ -58,40 +55,17 @@ class _MedicalRecordScreen01State extends State<MedicalRecordScreen01> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 100),
-                    Center(
-                      child: Image.asset(
-                        'images/dila/icon/illustration.png',
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    Text(
-                      'Add a medical record',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Rubik',
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    Text(
-                      'A detailed health history helps a doctor diagnose\n you better',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontFamily: 'Rubik',
-                      ),
-                    ),
+                    SizedBox(height: 50),
+
                     SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {
-                        showModalBottomSheet(
-                            backgroundColor: Colors.transparent,
-                            context: context,
-                            builder: (context) {
-                              return MedicalRecordScreen02();
-                            });
+                        // showModalBottomSheet(
+                        //     backgroundColor: Colors.transparent,
+                        //     context: context,
+                        //     builder: (context) {
+                        //       return MedicalRecordScreen02();
+                        //     });
                       },
                       style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.symmetric(
@@ -104,7 +78,7 @@ class _MedicalRecordScreen01State extends State<MedicalRecordScreen01> {
                         ),
                       ),
                       child: Text(
-                        'Add a record',
+                        'Confirm',
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w200,
