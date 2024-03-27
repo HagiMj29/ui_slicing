@@ -75,6 +75,13 @@ flutter:
     - images/fiza/circle.png
     - images/fiza/groupp.png
     - images/fiza/bell.png
+    - images/fiza/delivery.png
+    - images/fiza/guide.png
+    - images/fiza/payment.png
+    - images/fiza/prescription.png
+    - images/fiza/returns.png
+    - images/fiza/status.png
+
 
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
