@@ -34,7 +34,6 @@ class MedicineOrdersPage extends StatelessWidget {
                       border: InputBorder.none,
                       icon: Icon(Icons.search),
                     ),
-                    // Add your search functionality here
                   ),
                 ),
                 SizedBox(height: 20),
@@ -44,14 +43,13 @@ class MedicineOrdersPage extends StatelessWidget {
                     Expanded(
                       child: GestureDetector(
                         onTap: () {
-                          // Navigasi ke halaman lain
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => HelpCenterPage()),
                           );
                         },
                         child: Container(
-                        height: 150, // Atur tinggi sesuai kebutuhan Anda
+                        height: 150, 
                         child: Card(
                           margin: EdgeInsets.all(7),
                           child: Column(
@@ -78,7 +76,7 @@ class MedicineOrdersPage extends StatelessWidget {
                     ),
                     Expanded(
                       child: Container(
-                        height: 150, // Atur tinggi sesuai kebutuhan Anda
+                        height: 150, 
                         child: Card(
                           margin: EdgeInsets.all(7),
                           child: Column(
@@ -109,7 +107,7 @@ class MedicineOrdersPage extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Container(
-                        height: 150, // Atur tinggi sesuai kebutuhan Anda
+                        height: 150,
                         child: Card(
                           margin: EdgeInsets.all(7),
                           child: Column(
@@ -166,7 +164,7 @@ class MedicineOrdersPage extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Container(
-                        height: 150, // Atur tinggi sesuai kebutuhan Anda
+                        height: 150, 
                         child: Card(
                           margin: EdgeInsets.all(7),
                           child: Column(
@@ -231,7 +229,7 @@ Widget _buildHeader() {
   return Positioned(
     top: 20,
     left: 20,
-    right: 20, // Menyesuaikan posisi kanan
+    right: 20,
     child: Row(
       children: [
         Container(

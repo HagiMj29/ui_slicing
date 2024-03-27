@@ -39,7 +39,6 @@ class HelpCenterPage extends StatelessWidget {
                         ),
                         border: InputBorder.none,
                       ),
-                      // Add your search functionality here
                     ),
                   ),
                 ),
@@ -67,7 +66,7 @@ Widget _buildHeader() {
   return Positioned(
     top: 20,
     left: 20,
-    right: 20, // Menyesuaikan posisi kanan
+    right: 20,
     child: Row(
       children: [
         Container(
@@ -145,9 +144,6 @@ Widget _buildListItem(BuildContext context, String title, {String trailingText =
           if (trailingIcon != null) Icon(trailingIcon),
         ],
       ),
-      onTap: () {
-        // Action when list item is tapped
-      },
     ),
   );
 }
