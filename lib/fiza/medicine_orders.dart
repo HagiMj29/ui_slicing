@@ -250,7 +250,7 @@ Widget _buildHeader() {
         ),
         SizedBox(width: 10),
         Text(
-          'Help Center',
+          'Medicine Orders',
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,

@@ -32,8 +32,9 @@ class HelpCenterPage extends StatelessWidget {
                       decoration: InputDecoration(
                         hintText: 'I have an issue with...',
                         hintStyle: TextStyle(
-                          fontSize: 18,
+                          fontSize: 14,
                           fontFamily: 'Rubik',
+                          fontWeight: FontWeight.w100,
                           color: Color.fromRGBO(14, 190, 127, 1),
                         ),
                         border: InputBorder.none,
