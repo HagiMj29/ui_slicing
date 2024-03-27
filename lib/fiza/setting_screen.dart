@@ -64,7 +64,7 @@ Widget _buildHeader() {
         ),
         SizedBox(width: 10),
         Text(
-          'Enable Location Services',
+          'Settings',
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,

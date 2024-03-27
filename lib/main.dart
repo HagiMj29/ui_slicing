@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'fiza/privacy_policy.dart';
 import 'fiza/patient_details_01.dart';
+import 'fiza/help_center.dart';
+
 
 
 void main() {
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home: PrivacyPolicyPage(),
+      home: HelpCenterPage(),
       debugShowCheckedModeBanner: false,
     );
   }
