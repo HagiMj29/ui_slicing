@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:cupertino_icons/cupertino_icons.dart';
+import 'package:ui_slicing/page/select_time_doctor_page.dart';
 
 class DoctorList extends StatelessWidget {
   const DoctorList({super.key});
@@ -31,6 +31,7 @@ class DoctorList extends StatelessWidget {
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               "Dr.Shrutti Kedia",
@@ -45,11 +46,15 @@ class DoctorList extends StatelessWidget {
                             ),
                             Text("7 Years experience"),
                             Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Icon(
-                                      Icons.circle,
+                                      Icons.circle,size: 15,
                                       color: Colors.green,
                                     ),
                                     Text("74%")
@@ -59,7 +64,7 @@ class DoctorList extends StatelessWidget {
                                   children: [
                                     Icon(
                                       Icons.circle,
-                                      color: Colors.green,
+                                      color: Colors.green,size: 15,
                                     ),
                                     Text("78 Patient Stories")
                                   ],
@@ -94,6 +99,7 @@ class DoctorList extends StatelessWidget {
                         MaterialButton(
                           color: Colors.green,
                           onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>SelectTimeDoctorPage()));
                         },
                           child: Text("Book Now"),
                         ),
@@ -124,6 +130,7 @@ class DoctorList extends StatelessWidget {
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               "Dr.Shrutti Kedia",
@@ -138,11 +145,15 @@ class DoctorList extends StatelessWidget {
                             ),
                             Text("7 Years experience"),
                             Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Icon(
-                                      Icons.circle,
+                                      Icons.circle,size: 15,
                                       color: Colors.green,
                                     ),
                                     Text("74%")
@@ -152,7 +163,7 @@ class DoctorList extends StatelessWidget {
                                   children: [
                                     Icon(
                                       Icons.circle,
-                                      color: Colors.green,
+                                      color: Colors.green,size: 15,
                                     ),
                                     Text("78 Patient Stories")
                                   ],
@@ -217,6 +228,7 @@ class DoctorList extends StatelessWidget {
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
                               "Dr.Shrutti Kedia",
@@ -231,11 +243,15 @@ class DoctorList extends StatelessWidget {
                             ),
                             Text("7 Years experience"),
                             Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Icon(
-                                      Icons.circle,
+                                      Icons.circle,size: 15,
                                       color: Colors.green,
                                     ),
                                     Text("74%")
@@ -245,7 +261,7 @@ class DoctorList extends StatelessWidget {
                                   children: [
                                     Icon(
                                       Icons.circle,
-                                      color: Colors.green,
+                                      color: Colors.green,size: 15,
                                     ),
                                     Text("78 Patient Stories")
                                   ],
