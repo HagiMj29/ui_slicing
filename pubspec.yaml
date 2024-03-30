@@ -81,6 +81,19 @@ flutter:
     - images/fiza/prescription.png
     - images/fiza/returns.png
     - images/fiza/status.png
+    - images/fiza/doctor_1.png
+    - images/fiza/doctor_2.png
+    - images/fiza/doctor_3.png
+    - images/fiza/doctor_4.png
+    - images/fiza/love.png
+    - images/fiza/star.png
+    - images/fiza/image1.png
+    - images/fiza/image2.png
+    - images/fiza/image3.png
+    - images/fiza/home.png
+    - images/fiza/practo.png
+    - images/fiza/report.png
+    - images/fiza/free.png
 
 
   #   - images/a_dot_burr.jpeg
