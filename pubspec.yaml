@@ -30,9 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  liquid_ui:
 
-  shrink_sidemenu:
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -40,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
   flutter_svg: ^2.0.10+1
+  shrink_sidemenu: ^2.0.0+2-null-safety
 
 dev_dependencies:
   flutter_test:
