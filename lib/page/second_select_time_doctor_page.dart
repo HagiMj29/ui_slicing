@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../widgets/list_time.dart';
-import '../widgets/second_list_Time.dart';
 
 class SecondSelectTimeDoctorPage extends StatelessWidget {
   const SecondSelectTimeDoctorPage({super.key});
