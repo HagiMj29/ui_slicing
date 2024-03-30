@@ -344,44 +344,49 @@ class _HomePageState extends State<HomePage> {
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            child: Row(
               children: const [
                 CircleAvatar(
                   backgroundColor: Colors.white,
+                  backgroundImage: AssetImage('images/img_25.png'),
                   radius: 22.0,
                 ),
-                SizedBox(height: 16.0),
-                Text(
-                  "Hello, John Doe",
-                  style: TextStyle(color: Colors.white),
+                SizedBox(width: 10.0),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Abdullah Mamun",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    Row(
+                      children: [
+                        Icon(CupertinoIcons.phone_fill,size: 15,color: Colors.white,),
+                        SizedBox(width: 5,),
+                        Text("081237485772", style: TextStyle(
+                          color: Colors.white
+                        ),)
+                      ],
+                    )
+                  ],
                 ),
                 SizedBox(height: 20.0),
               ],
             ),
           ),
+          SizedBox(height: 10,),
           ListTile(
             onTap: () {},
-            leading: const Icon(Icons.home, size: 20.0, color: Colors.white),
-            title: const Text("Home"),
+            leading: const Icon(Icons.person, size: 20.0, color: Colors.white),
+            title: const Text("My Doctors"),
             textColor: Colors.white,
             dense: true,
           ),
           ListTile(
             onTap: () {},
-            leading: const Icon(Icons.verified_user,
+            leading: const Icon(Icons.medication_liquid_outlined,
                 size: 20.0, color: Colors.white),
-            title: const Text("Profile"),
-            textColor: Colors.white,
-            dense: true,
-
-            // padding: EdgeInsets.zero,
-          ),
-          ListTile(
-            onTap: () {},
-            leading: const Icon(Icons.monetization_on,
-                size: 20.0, color: Colors.white),
-            title: const Text("Wallet"),
+            title: const Text("Medical Records"),
             textColor: Colors.white,
             dense: true,
 
@@ -389,9 +394,19 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             onTap: () {},
-            leading: const Icon(Icons.shopping_cart,
+            leading: const Icon(Icons.credit_card,
                 size: 20.0, color: Colors.white),
-            title: const Text("Cart"),
+            title: const Text("Payments"),
+            textColor: Colors.white,
+            dense: true,
+
+            // padding: EdgeInsets.zero,
+          ),
+          ListTile(
+            onTap: () {},
+            leading: const Icon(Icons.medication,
+                size: 20.0, color: Colors.white),
+            title: const Text("Medicine Order"),
             textColor: Colors.white,
             dense: true,
 
@@ -400,8 +415,8 @@ class _HomePageState extends State<HomePage> {
           ListTile(
             onTap: () {},
             leading:
-                const Icon(Icons.star_border, size: 20.0, color: Colors.white),
-            title: const Text("Favorites"),
+                const Icon(Icons.calendar_month_sharp, size: 20.0, color: Colors.white),
+            title: const Text("Test Bookings"),
             textColor: Colors.white,
             dense: true,
 
@@ -410,8 +425,42 @@ class _HomePageState extends State<HomePage> {
           ListTile(
             onTap: () {},
             leading:
-                const Icon(Icons.settings, size: 20.0, color: Colors.white),
+                const Icon(Icons.verified_user, size: 20.0, color: Colors.white),
+            title: const Text("Privacy & Policy"),
+            textColor: Colors.white,
+            dense: true,
+
+            // padding: EdgeInsets.zero,
+          ),
+
+          ListTile(
+            onTap: () {},
+            leading:
+            const Icon(Icons.help, size: 20.0, color: Colors.white),
+            title: const Text("Help Center"),
+            textColor: Colors.white,
+            dense: true,
+
+            // padding: EdgeInsets.zero,
+          ),
+
+          ListTile(
+            onTap: () {},
+            leading:
+            const Icon(Icons.settings, size: 20.0, color: Colors.white),
             title: const Text("Settings"),
+            textColor: Colors.white,
+            dense: true,
+
+            // padding: EdgeInsets.zero,
+          ),
+          SizedBox(height: 100,),
+
+          ListTile(
+            onTap: () {},
+            leading:
+            const Icon(Icons.door_back_door, size: 20.0, color: Colors.white),
+            title: const Text("Logout"),
             textColor: Colors.white,
             dense: true,
 
