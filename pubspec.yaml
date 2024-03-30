@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
   table_calendar: ^3.1.1
+  shrink_sidemenu: ^2.0.0+2-null-safety
 
 dev_dependencies:
   flutter_test:
@@ -82,6 +83,13 @@ flutter:
      - images/dila/icon/doctor2.png
      - images/dila/icon/doctor3.png
      - images/dila/icon/thank_you.png
+     - images/dila/icon/profil_menu.png
+     - images/dila/icon/close.png
+     - images/dila/icon/telfon.png
+     - images/dila/icon/my_doctors.png
+     - images/dila/icon/appointment1.png
+     - images/dila/icon/star.png
+     - images/dila/icon/child.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
