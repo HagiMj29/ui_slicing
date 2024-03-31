@@ -55,10 +55,9 @@ class DoctorsPage extends StatelessWidget {
             left: 20,
             right: 20,
             bottom: 0,
-            child: ListView(
+            child: Column(
               children: <Widget>[
                 SizedBox(height: 10),
-                Spacer(),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
@@ -84,19 +83,21 @@ class DoctorsPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 20),
-                Column(
-                  children: doctorsData.map((doctor) {
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
+                Expanded(
+                  child: ListView(
+                    children: doctorsData.map((doctor) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: _buildDoctorCard(doctor),
                         ),
-                        child: _buildDoctorCard(doctor),
-                      ),
-                    );
-                  }).toList(),
+                      );
+                    }).toList(),
+                  ),
                 ),
               ],
             ),
@@ -234,31 +235,36 @@ class DoctorsPage extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            doctorData['imagePath'],
-            height: 100,
-            width: 100,
-          ),
-          Column(
+          Row(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(height: 10),
-              Text(
-                doctorData['name'],
-                style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              SizedBox(height: 10),
-              Text(doctorData['specialization']),
-              SizedBox(height: 10),
               Image.asset(
-                'images/fiza/star.png',
-                scale: 1,
-              )
+                doctorData['imagePath'],
+                height: 100,
+                width: 100,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 10),
+                  Text(
+                    doctorData['name'],
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(doctorData['specialization']),
+                  SizedBox(height: 10),
+                  Image.asset(
+                    'images/fiza/star.png',
+                    scale: 1,
+                  )
+                ],
+              ),
             ],
           ),
           SizedBox(height: 10),

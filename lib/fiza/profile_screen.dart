@@ -1,172 +1,280 @@
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
+    double halfWidth = MediaQuery.of(context).size.width / 2; // Setengah dari lebar layar
+
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
         children: [
-          Image.asset(
-            'images/fiza/bg.png',
-            fit: BoxFit.cover,
-          ),
-          _buildHeader(),
-          Positioned(
-            top: 70,
-            left: 20,
-            right: 20,
-            bottom: 0,
+          Positioned.fill(
             child: ListView(
               children: <Widget>[
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 450,
-                      child: Card(
-                        color: Colors.transparent,
-                        elevation: 0,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
+                SizedBox(height: 370),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  child: Text(
+                    'Personal information',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Rubik',
+                    ),
+                  ),
+                ),
+                SizedBox(height: 15),
+                Card(
+                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  color: Colors.white,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ListTile(
+                          title: Text(
+                            "Name",
+                            style: TextStyle(
+                              color: Colors.green,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: TextFormField(
+                            initialValue: "Abdullah Mamun",
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.black54,
+                            ),
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                            ),
+                          ),
                         ),
-                        child: Padding(
-                          padding: EdgeInsets.all(20),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                      ],
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
+                Card(
+                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ListTile(
+                        title: Text(
+                          "Contact Number",
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        subtitle: Text(
+                          "+8801800000000",
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Colors.black54,
+                            ),
+                        ),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
                             children: [
-                              SizedBox(height: 10),
-                              Text(
-                                'Patient Name',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                  fontFamily: 'Rubik',
-                                  color: Color.fromRGBO(103, 114, 148, 1)
-                                ),
-                              ),
-                              SizedBox(height: 8),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                  fillColor: Colors.white.withOpacity(0.2),
-                                  filled: true,
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  hintText: 'Ilfiza Mutia Rahmi',
-                                  hintStyle: TextStyle(
-                                    fontSize: 14,
-                                    fontFamily: 'Rubik',
-                                    fontWeight: FontWeight.w100,
-                                    color: Color.fromRGBO(103, 114, 148, 1)
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 20),
-                              Text(
-                                'Age',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                  fontFamily: 'Rubik',
-                                  color: Color.fromRGBO(103, 114, 148, 1)
-                                ),
-                              ),
-                              SizedBox(height: 20),
-                              Text(
-                                'Gender',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                  fontFamily: 'Rubik',
-                                  color: Color.fromARGB(255, 103, 114, 148)
-                                ),
-                              ),
-                              SizedBox(height: 8),
-                              
-                              SizedBox(height: 20),
-                              Text(
-                                'Mobile Number',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                  fontFamily: 'Rubik',
-                                  color: Color.fromRGBO(103, 114, 148, 1)
-                                ),
-                              ),
-                              SizedBox(height: 8),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                  fillColor: Colors.white.withOpacity(0.2),
-                                  filled: true,
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  hintText: '+628930389000',
-                                  hintStyle: TextStyle(
-                                    fontSize: 14,
-                                    fontFamily: 'Rubik',
-                                    fontWeight: FontWeight.w100,
-                                    color: Color.fromRGBO(103, 114, 148, 1)
-                                  ),
-                                ),
-                              ),
-                              SizedBox(height: 20),
-                              Text(
-                                'Email',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                  fontFamily: 'Rubik',
-                                  color: Color.fromRGBO(103, 114, 148, 1)
-                                ),
-                              ),
-                              SizedBox(height: 8),
-                              TextFormField(
-                                decoration: InputDecoration(
-                                  labelText: 'Location',
-                                  hintText: 'Enter your location',
-                                  prefixIcon: Icon(Icons.location_on),
-                                  border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                ),
+                              IconButton(
+                                onPressed: () {
+                                    // Navigator.push(
+                                    //   context,
+                                    //   MaterialPageRoute(
+                                    //     builder: (context) => UpdateKaryawan(karyawan: data),
+                                    //   ),
+                                    // );
+                                },
+                                icon: Icon(Icons.edit),
                               ),
                             ],
                           ),
                         ),
-                      ),
+                      ],
                     ),
-                  ],
+                ),
+                SizedBox(height: 10),
+                Card(
+                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ListTile(
+                        title: Text(
+                          "Date of birth",
+                          style: TextStyle(
+                            color: Colors.black54,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        subtitle: Text(
+                          "DD MM YYYY",
+                            style: TextStyle(
+                              fontSize: 10,
+                              color: Colors.black54,
+                            ),
+                        ),
+                        trailing: Row(
+                          mainAxisSize: MainAxisSize.min,
+                            children: [
+                              IconButton(
+                                onPressed: () {
+                                    // Navigator.push(
+                                    //   context,
+                                    //   MaterialPageRoute(
+                                    //     builder: (context) => UpdateKaryawan(karyawan: data),
+                                    //   ),
+                                    // );
+                                },
+                                icon: Icon(Icons.edit),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                ),
+                SizedBox(height: 15),
+                Card(
+                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  color: Colors.white,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ListTile(
+                          title: Text(
+                            "Location",
+                            style: TextStyle(
+                              color: Colors.green,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: TextFormField(
+                            initialValue: "Add Location",
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.black54,
+                            ),
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
                 SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () {
-                      },
-                      style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 50,
-                          vertical: 15,
+                Card(
+                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  color: Colors.transparent,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Center(
+                      child: ElevatedButton(
+                        onPressed: () {
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(builder: (context) => SettingsScreen()),
+                          // );
+                        },
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 20, // Mengatur padding horizontal menjadi 20
+                            vertical: 15,
+                          ),
+                          backgroundColor: Color.fromRGBO(14, 190, 127, 1),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                         ),
-                        backgroundColor: Color.fromRGBO(14, 190, 127, 1),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
-                      child: Text(
-                        'Continue',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w200,
-                          fontSize: 16,
+                        child: Text(
+                          'Continue',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w200,
+                            fontSize: 16,
+                          ),
                         ),
                       ),
                     ),
+                  ),
+                ),
+                SizedBox(height: 20),
               ],
             ),
           ),
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              height: 350, 
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(12.0),
+                  bottomRight: Radius.circular(12.0),
+                ),
+                color: Color.fromRGBO(14, 190, 127, 1),
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(height: 30),
+                    Text(
+                      'Set up your profile',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontFamily: 'Rubik',
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Text(
+                      'Update your profile to connect your doctor with \n better impression.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontFamily: 'Rubik',
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(height: 20),
+                    Image.asset(
+                      'images/fiza/profil.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          _buildHeader(),
         ],
       ),
     );
@@ -174,7 +282,7 @@ class ProfilePage extends StatelessWidget {
 
   Widget _buildHeader() {
     return Positioned(
-      top: 20,
+      top: 15,
       left: 20,
       right: 20,
       child: Row(
@@ -195,9 +303,10 @@ class ProfilePage extends StatelessWidget {
           ),
           SizedBox(width: 10),
           Text(
-            'Details Patient',
+            'Profile',
             style: TextStyle(
               fontSize: 18,
+              color: Colors.white,
               fontWeight: FontWeight.bold,
               fontFamily: 'Rubik',
             ),

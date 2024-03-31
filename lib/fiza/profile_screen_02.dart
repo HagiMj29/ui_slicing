@@ -1,72 +1,87 @@
 import 'package:flutter/material.dart';
 
 class ProfilePage02 extends StatelessWidget {
-  final TextEditingController _controller = TextEditingController(text: 'Ilfiza Mutia Rahmi');
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
         children: [
-          Container(
-            color: Colors.grey, // Background warna abu gelap
+          Image.asset(
+            'images/fiza/bg.png',
+            fit: BoxFit.cover,
           ),
           _buildHeader(),
           Positioned(
-            top: 150,
+            top: 70,
             left: 20,
             right: 20,
             bottom: 0,
             child: ListView(
               children: <Widget>[
                 SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: 450,
-                      child: Card(
-                        color: Colors.transparent,
-                        elevation: 0,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(20),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              SizedBox(height: 10),
-                              Text(
-                                'What is your name?',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontFamily: 'Rubik',
-                                  color: Colors.white,
-                                ),
-                              ),
-                              SizedBox(height: 8),
-                              TextField(
-                                decoration: InputDecoration(
-                                  hintText: 'Ilfiza Mutia Rahmi',
-                                  hintStyle: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                  border: UnderlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.grey),
-                                  ),
-                                  filled: true,
-                                  fillColor: Colors.transparent,
-                                  contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                                ),
-                              ),
-                            ],
+                Card(
+                  color: Colors.white,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(5),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ListTile(
+                          title: Text(
+                            "Name",
+                            style: TextStyle(
+                              color: Colors.green,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          subtitle: TextFormField(
+                            initialValue: "Abdullah Mamun",
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.black54,
+                            ),
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              focusedBorder: InputBorder.none,
+                              enabledBorder: InputBorder.none,
+                            ),
+                            onChanged: (value) {
+                              // Your onChanged logic here
+                            },
                           ),
                         ),
-                      ),
+                      ],
                     ),
-                  ],
+                  ),
+                ),
+                SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    _showConfirmationDialog(context);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 50,
+                      vertical: 15,
+                    ),
+                    backgroundColor: Color.fromRGBO(14, 190, 127, 1),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: Text(
+                    'Continue',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w200,
+                      fontSize: 16,
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -99,16 +114,49 @@ class ProfilePage02 extends StatelessWidget {
           ),
           SizedBox(width: 10),
           Text(
-            'Profile',
+            'Details Patient',
             style: TextStyle(
               fontSize: 18,
-              color: Colors.white,
               fontWeight: FontWeight.bold,
               fontFamily: 'Rubik',
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Future<void> _showConfirmationDialog(BuildContext context) async {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Confirmation'),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                Text('Are you sure you want to exit?'),
+              ],
+            ),
+          ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                // Add action when user confirms
+                Navigator.of(context).pop();
+              },
+              child: Text('Yes'),
+            ),
+          ],
+        );
+      },
     );
   }
 }
