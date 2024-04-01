@@ -1,162 +1,114 @@
 import 'package:flutter/material.dart';
 
 class ProfilePage02 extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+    DateTime _selectedDate;
+    final Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          Image.asset(
-            'images/fiza/bg.png',
-            fit: BoxFit.cover,
-          ),
-          _buildHeader(),
-          Positioned(
-            top: 70,
-            left: 20,
-            right: 20,
-            bottom: 0,
-            child: ListView(
-              children: <Widget>[
-                SizedBox(height: 10),
-                Card(
-                  color: Colors.white,
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.all(5),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ListTile(
-                          title: Text(
-                            "Name",
-                            style: TextStyle(
-                              color: Colors.green,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          subtitle: TextFormField(
-                            initialValue: "Abdullah Mamun",
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Colors.black54,
-                            ),
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              focusedBorder: InputBorder.none,
-                              enabledBorder: InputBorder.none,
-                            ),
-                            onChanged: (value) {
-                              // Your onChanged logic here
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    _showConfirmationDialog(context);
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 50,
-                      vertical: 15,
-                    ),
-                    backgroundColor: Color.fromRGBO(14, 190, 127, 1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  child: Text(
-                    'Continue',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w200,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+      body: SingleChildScrollView(
+        clipBehavior: Clip.none,
+        child: Stack(
+          children: [
+            Container(
+              width: screenSize.width,
+              height: screenSize.height ,
+              decoration: BoxDecoration(
+              color: Color.fromRGBO(85, 99, 134, 1)
 
-  Widget _buildHeader() {
-    return Positioned(
-      top: 20,
-      left: 20,
-      right: 20,
-      child: Row(
-        children: [
-          Container(
-            padding: EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.white,
-            ),
-            child: GestureDetector(
-              child: Image.asset(
-                'images/fiza/back.png',
-                width: 20,
-                height: 20,
               ),
             ),
-          ),
-          SizedBox(width: 10),
-          Text(
-            'Details Patient',
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              fontFamily: 'Rubik',
+            Positioned(
+              top: 30,
+              left: 5,
+              right: 0,
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        // Navigasi
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        minimumSize: Size(0, 40),
+                        padding: EdgeInsets.zero,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                      child: Container(
+                        padding: EdgeInsets.all(8.0),
+                        child: Icon(
+                          Icons.arrow_back_ios_new,
+                          size: 16, 
+                          color: Color.fromRGBO(103, 114, 148, 1),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 15),
+                    Text(
+                      'Profile',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ),
-        ],
-      ),
-    );
-  }
+            Positioned(
+              top: 210,
+              left: 0,
+              right: 0,
+              height: screenSize.height,
+              child: SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Column( 
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'What is your name?',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18.0,
+                        ),
+                      ),
+                      SizedBox(height: 8),
+                  TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Abdullah Mamun',
+                      hintStyle: 
+                        TextStyle(
+                          color: Colors.white, 
+                          fontSize: 18, 
+                          fontWeight: FontWeight.bold),
+                      enabledBorder: UnderlineInputBorder( 
+                        borderSide: BorderSide(color: Colors.white),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                      ),
+                    ),
+                    style: TextStyle(
+                      color: Colors.white, 
+                      fontWeight: FontWeight.bold, 
+                      fontSize: 22),
+                  ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
 
-  Future<void> _showConfirmationDialog(BuildContext context) async {
-    return showDialog<void>(
-      context: context,
-      barrierDismissible: false,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('Confirmation'),
-          content: SingleChildScrollView(
-            child: ListBody(
-              children: <Widget>[
-                Text('Are you sure you want to exit?'),
-              ],
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Text('Cancel'),
-            ),
-            TextButton(
-              onPressed: () {
-                // Add action when user confirms
-                Navigator.of(context).pop();
-              },
-              child: Text('Yes'),
-            ),
           ],
-        );
-      },
+        ),
+      ),
     );
   }
 }

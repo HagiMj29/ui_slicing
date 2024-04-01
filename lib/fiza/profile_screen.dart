@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    double halfWidth = MediaQuery.of(context).size.width / 2; // Setengah dari lebar layar
+    double halfWidth = MediaQuery.of(context).size.width / 2;
 
     return Scaffold(
       body: Stack(

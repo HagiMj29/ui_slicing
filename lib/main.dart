@@ -3,7 +3,7 @@ import 'fiza/privacy_policy.dart';
 import 'fiza/patient_details_01.dart';
 import 'fiza/help_center.dart';
 import 'fiza/medicine_orders.dart';
-import 'fiza/patient_details_02.dart';
+import 'fiza/patient_detail.dart';
 import 'fiza/doctors_screen.dart';
 import 'fiza/diagnotics_test_02.dart';
 import 'fiza/profile_screen.dart';
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: false,
       ),
-      home: ProfilePage(),
+      home: ProfilePage02(),
       debugShowCheckedModeBanner: false,
     );
   }
