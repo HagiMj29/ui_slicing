@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
   flutter_svg: ^2.0.10+1
+  table_calendar: ^3.1.1
   shrink_sidemenu: ^2.0.0+2-null-safety
 
 dev_dependencies:
@@ -60,6 +61,12 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
+  fonts:
+    - family: Rubik
+      fonts:
+        - asset: fonts/Rubik-Regular.ttf
+        - asset: fonts/Rubik-Bold.ttf
+          weight: 700
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
@@ -92,6 +99,64 @@ flutter:
     - images/img_25.png
     - images/img_26.png
     - images/img_27.png
+    - images/fiza/bg.png
+    - images/fiza/back.png
+    - images/fiza/details.png
+    - images/fiza/diagonstic.png
+    - images/fiza/location.png
+    - images/fiza/lock.png
+    - images/fiza/circle.png
+    - images/fiza/groupp.png
+    - images/fiza/bell.png
+    - images/fiza/delivery.png
+    - images/fiza/guide.png
+    - images/fiza/payment.png
+    - images/fiza/prescription.png
+    - images/fiza/returns.png
+    - images/fiza/status.png
+    - images/fiza/doctor_1.png
+    - images/fiza/doctor_2.png
+    - images/fiza/doctor_3.png
+    - images/fiza/doctor_4.png
+    - images/fiza/love.png
+    - images/fiza/star.png
+    - images/fiza/image1.png
+    - images/fiza/image2.png
+    - images/fiza/image3.png
+    - images/fiza/home.png
+    - images/fiza/practo.png
+    - images/fiza/report.png
+    - images/fiza/free.png
+    - images/fiza/profil.png
+    - images/fiza/step.png
+    - images/dila/background/bg.png
+    - images/dila/background/ellipse_142.png
+    - images/dila/background/ellipse_143.png
+    - images/dila/icon/google.png
+    - images/dila/icon/facebook.png
+    - images/dila/icon/illustration.png
+    - images/dila/icon/back.png
+    - images/dila/icon/camera.png
+    - images/dila/icon/files.png
+    - images/dila/icon/gallery.png
+    - images/dila/icon/medicine.png
+    - images/dila/icon/titik_tiga.png
+    - images/dila/icon/record.png
+    - images/dila/icon/report.png
+    - images/dila/icon/prescription.png
+    - images/dila/icon/invoice.png
+    - images/dila/icon/doctor1.png
+    - images/dila/icon/titik_hijau.png
+    - images/dila/icon/doctor2.png
+    - images/dila/icon/doctor3.png
+    - images/dila/icon/thank_you.png
+    - images/dila/icon/profil_menu.png
+    - images/dila/icon/close.png
+    - images/dila/icon/telfon.png
+    - images/dila/icon/my_doctors.png
+    - images/dila/icon/appointment1.png
+    - images/dila/icon/star.png
+    - images/dila/icon/child.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

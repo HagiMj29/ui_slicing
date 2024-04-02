@@ -2,6 +2,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:ui_slicing/dila/page/doctor_appointment_screen_01.dart';
+import 'package:ui_slicing/dila/page/login_screen_01.dart';
+import 'package:ui_slicing/dila/page/medical_record_screen_01.dart';
+import 'package:ui_slicing/dila/page/medicine_order_screen.dart';
+import 'package:ui_slicing/dila/page/my_doctors_screen.dart';
+import 'package:ui_slicing/fiza/help_center.dart';
+import 'package:ui_slicing/fiza/privacy_policy.dart';
+import 'package:ui_slicing/fiza/profile_screen.dart';
+import 'package:ui_slicing/fiza/setting_screen.dart';
 import 'package:ui_slicing/page/favorite_doctor_page.dart';
 import 'package:ui_slicing/page/find_doctor_page.dart';
 import 'package:ui_slicing/page/live_page.dart';
@@ -12,6 +21,8 @@ import 'package:ui_slicing/widgets/home_image_card.dart';
 import 'package:ui_slicing/widgets/popular_home_doctor.dart';
 import 'package:ui_slicing/widgets/theme.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
+
+import '../fiza/doctors_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -226,18 +237,23 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 5, right: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Feature Doctor",
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorsPage()));
+                        },
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Feature Doctor",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20,
+                              ),
                             ),
-                          ),
-                          Text("See all>")
-                        ],
+                            Text("See all>")
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -303,17 +319,22 @@ class _HomePageState extends State<HomePage> {
                     ),
                   )),
                   Expanded(
-                      child: Container(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(
-                          Icons.book,
-                          color: Colors.green,
-                        ),
-                      ],
-                    ),
-                  )),
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorAppointmentScreen01()));
+                        },
+                        child: Container(
+                                            child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.book,
+                            color: Colors.green,
+                          ),
+                        ],
+                                            ),
+                                          ),
+                      )),
                   Expanded(
                       child: Container(
                     child: Column(
@@ -344,46 +365,55 @@ class _HomePageState extends State<HomePage> {
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 16.0),
-            child: Row(
-              children: const [
-                CircleAvatar(
-                  backgroundColor: Colors.white,
-                  backgroundImage: AssetImage('images/img_25.png'),
-                  radius: 22.0,
-                ),
-                SizedBox(width: 10.0),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Abdullah Mamun",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    Row(
-                      children: [
-                        Icon(CupertinoIcons.phone_fill,size: 15,color: Colors.white,),
-                        SizedBox(width: 5,),
-                        Text("081237485772", style: TextStyle(
-                          color: Colors.white
-                        ),)
-                      ],
-                    )
-                  ],
-                ),
-                SizedBox(height: 20.0),
-              ],
+            child: GestureDetector(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfilePage()));
+              },
+              child: Row(
+                children: const [
+                  CircleAvatar(
+                    backgroundColor: Colors.white,
+                    backgroundImage: AssetImage('images/img_25.png'),
+                    radius: 22.0,
+                  ),
+                  SizedBox(width: 10.0),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Abdullah Mamun",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Row(
+                        children: [
+                          Icon(CupertinoIcons.phone_fill,size: 15,color: Colors.white,),
+                          SizedBox(width: 5,),
+                          Text("081237485772", style: TextStyle(
+                            color: Colors.white
+                          ),)
+                        ],
+                      )
+                    ],
+                  ),
+                  SizedBox(height: 20.0),
+                ],
+              ),
             ),
           ),
           SizedBox(height: 10,),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>MyDoctorScreen()));
+            },
             leading: const Icon(Icons.person, size: 20.0, color: Colors.white),
             title: const Text("My Doctors"),
             textColor: Colors.white,
             dense: true,
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>MedicalRecordScreen01()));
+            },
             leading: const Icon(Icons.medication_liquid_outlined,
                 size: 20.0, color: Colors.white),
             title: const Text("Medical Records"),
@@ -403,7 +433,9 @@ class _HomePageState extends State<HomePage> {
             // padding: EdgeInsets.zero,
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>MedicineOrderScreen()));
+            },
             leading: const Icon(Icons.medication,
                 size: 20.0, color: Colors.white),
             title: const Text("Medicine Order"),
@@ -413,7 +445,9 @@ class _HomePageState extends State<HomePage> {
             // padding: EdgeInsets.zero,
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              
+            },
             leading:
                 const Icon(Icons.calendar_month_sharp, size: 20.0, color: Colors.white),
             title: const Text("Test Bookings"),
@@ -423,7 +457,9 @@ class _HomePageState extends State<HomePage> {
             // padding: EdgeInsets.zero,
           ),
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>PrivacyPolicyPage()));
+            },
             leading:
                 const Icon(Icons.verified_user, size: 20.0, color: Colors.white),
             title: const Text("Privacy & Policy"),
@@ -434,7 +470,9 @@ class _HomePageState extends State<HomePage> {
           ),
 
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>HelpCenterPage()));
+            },
             leading:
             const Icon(Icons.help, size: 20.0, color: Colors.white),
             title: const Text("Help Center"),
@@ -445,7 +483,9 @@ class _HomePageState extends State<HomePage> {
           ),
 
           ListTile(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>SettingsScreen()));
+            },
             leading:
             const Icon(Icons.settings, size: 20.0, color: Colors.white),
             title: const Text("Settings"),
@@ -457,7 +497,70 @@ class _HomePageState extends State<HomePage> {
           SizedBox(height: 100,),
 
           ListTile(
-            onTap: () {},
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    content: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SizedBox(height: 16),
+                        Column(
+                          children: [
+                            Text(
+                              'Logout',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 38,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 5,),
+                            Text(
+                              'Are you sure want to logout?',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(height: 20,),
+                          ],
+                        ),
+                      ],
+                    ),
+                    actions: <Widget>[
+                      Center(
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.of(context)
+                                .pop(); // Tutup dialog saat tombol ditekan
+                          },
+                          child: Text(
+                            "Cancel",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ),
+                      Center(
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreen01())); // Tutup dialog saat tombol ditekan
+                          },
+                          child: Text(
+                            "Ok",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      )
+
+                    ],
+                  );
+                },
+              );
+            },
             leading:
             const Icon(Icons.door_back_door, size: 20.0, color: Colors.white),
             title: const Text("Logout"),
